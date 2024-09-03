@@ -123,8 +123,6 @@ import Welcome from '@/Components/Welcome.vue';
 </template>
 
 <script>
-// import messages_icon from "@/assets/total_messages.svg";
-// import credit_icon from "@/assets/credi_balance_svg.svg"
 
 export default {
     data() {

@@ -77,7 +77,11 @@ export default {
                 return;
             }
 
-            axios.post(route('bookings.store'), this.booking_payload)
+            axios.post(route('bookings.store'), this.booking_payload, {
+                headers: {
+                    'X-CSRF-TOKEN': this.$page.props.csrf_token
+                }
+            })
                 .then(response => {
                     if(response.status === 201){
                         this.modal_loading = false;
@@ -108,6 +112,7 @@ export default {
 </script>
 
 <template>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <Head title="Welcome"/>
     <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
         <Modal
@@ -188,7 +193,6 @@ export default {
                                 target="_blank"
                                 class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                             >
-
                                 Documentation
                             </a>
 

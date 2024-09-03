@@ -27,3 +27,5 @@ Route::middleware([
     Route::get('/destinations', [DestinationController::class, 'index'])->name('destinations.index');
 });
 
+Route::post('/bookings', [ApiBookingController::class, 'store'])->name('bookings.store')->middleware('web');
+
