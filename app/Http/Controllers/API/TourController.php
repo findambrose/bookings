@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tour;
 use Illuminate\Http\Request;
 
 class TourController extends Controller
@@ -20,7 +21,6 @@ class TourController extends Controller
      */
     public function store(Request $request)
     {
-        // Store the tour
         try {
             $tour = Tour::create($request->all());
             return response()->json($tour, 201);
@@ -45,7 +45,21 @@ class TourController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        try {
+            $tour = Tour::find($id);
+
+            if(!$tour){
+                return response()->json(['message' => 'Tour not found'], 404);
+            }
+
+            $tour->update($request->all());
+            return response()->json($tour, 201);
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => 'Failed to update the tour',
+                'error' => $e->getMessage()
+            ], 500);
+        }
     }
 
     /**
@@ -53,6 +67,19 @@ class TourController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $tour = Tour::find($id);
+
+        if(!$tour){
+            return response()->json(['message' => 'Tour not found'], 404);
+        }
+
+        try {
+            $tour->delete();
+            $tours = Tour::orderBy('id', 'desc')->paginate(10);
+            return response()->json(['message' => "Tour Deleted",
+                'tours' => $tours], 201);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Tour deletion failed!'], 409);
+        }
     }
 }

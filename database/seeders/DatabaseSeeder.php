@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         //Seed a destination with three tours
         $this->call([
-            DestinationsSeeder::class
+            DestinationsSeeder::class,
+            UsersSeeder::class
         ]);
     }
 }

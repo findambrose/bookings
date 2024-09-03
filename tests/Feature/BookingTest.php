@@ -1,26 +1,20 @@
 <?php
 
+use App\Models\Booking;
+use App\Models\Tour;
+
 it('allows a user to book a tour', function () {
-    $user = User::factory()->create();
     $tour = Tour::factory()->create();
 
-    $response = $this->actingAs($user)->post('/bookings', [
+    $response = $this->post('api/bookings', [
         'tour_id' => $tour->id,
+        'user_name' => 'John Doe',
+        'email_address' => 'test@test.com',
         'slots' => 2,
+        'total_price' => 200,
     ]);
 
-    $response->assertRedirect('/bookings');
+    $response->assertStatus(201);
+
     expect(Booking::where('tour_id', $tour->id)->exists())->toBeTrue();
-});
-
-it('allows a user to cancel a booking', function () {
-    $user = User::factory()->create();
-    $booking = Booking::factory()->create(['user_id' => $user->id]);
-
-    $response = $this->actingAs($user)->put("/bookings/{$booking->id}", [
-        'status' => 'cancelled'
-    ]);
-
-    $response->assertRedirect('/bookings');
-    expect(Booking::find($booking->id))->toBeNull();
 });

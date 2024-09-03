@@ -13,8 +13,15 @@ class Booking extends Model
     protected $fillable = [
         'user_id',
         'tour_id',
+        'slots',
+        'total_price',
         'status'
     ];
+
+    public function getCreatedAtAttribute($value)
+    {
+        return date('d M Y h:i a', strtotime($value));
+    }
 
     public function user()
     {
@@ -30,6 +37,11 @@ class Booking extends Model
             ->withDefault([
                 'name' => 'Tour not found'
             ]);
+    }
+
+    public function ticket()
+    {
+        return $this->hasOne(Ticket::class);
     }
 
 }

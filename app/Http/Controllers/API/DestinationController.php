@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Destination;
 use Illuminate\Http\Request;
 
 class DestinationController extends Controller
@@ -12,7 +13,7 @@ class DestinationController extends Controller
      */
     public function index()
     {
-        // Lets render this through Inertia instead
+        // Lets render this data through Inertia instead
     }
 
     /**
@@ -20,7 +21,23 @@ class DestinationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string'
+        ]);
+
+        $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $request->name)));
+        $request->merge(['slug' => $slug]);
+
+        try {
+            Destination::create($request->all());
+            $destinations = Destination::orderBy('id', 'desc')->paginate(10);
+            return response()->json(['message' => "Destination Created",
+                'destinations' => $destinations], 201);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Destination creation failed!'], 409);
+        }
+
     }
 
     /**
@@ -36,7 +53,27 @@ class DestinationController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string'
+        ]);
+
+        $destination = Destination::find($id);
+        if (!$destination) {
+            return response()->json(['message' => 'Destination not found'], 404);
+        }
+
+        $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $request->name)));
+        $request->merge(['slug' => $slug]);
+
+        try {
+            $destination->update($request->all());
+            $destinations = Destination::orderBy('id', 'desc')->paginate(10);
+            return response()->json(['message' => "Destination Updated",
+                'destinations' => $destinations], 201);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Destination update failed!'], 409);
+        }
     }
 
     /**
@@ -44,6 +81,13 @@ class DestinationController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $destination = Destination::find($id);
+        if (!$destination) {
+            return response()->json(['message' => 'Destination not found'], 404);
+        }
+        $destination->delete();
+        $destinations = Destination::orderBy('id', 'desc')->paginate(10);
+        return response()->json(['message' => 'Destination deleted',
+            'destinations' => $destinations], 201);
     }
 }

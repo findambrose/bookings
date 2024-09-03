@@ -19,6 +19,11 @@ class Tour extends Model
         'destination_id',
     ];
 
+    public function getCreatedAtAttribute($value)
+    {
+        return date('d M Y h:i a', strtotime($value));
+    }
+
     public function destination()
     {
         return $this->belongsTo(Destination::class)

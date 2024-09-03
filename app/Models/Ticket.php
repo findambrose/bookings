@@ -8,12 +8,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Ticket extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     protected $fillable = [
         'booking_id',
         'ticket_number'
     ];
+
+    public function getCreatedAtAttribute($value)
+    {
+        //Use human readable format including time
+        return date('d M Y h:i a', strtotime($value));
+    }
 
     public function booking()
     {

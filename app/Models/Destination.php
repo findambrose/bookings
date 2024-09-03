@@ -16,6 +16,11 @@ class Destination extends Model
         'slug'
     ];
 
+    public function getCreatedAtAttribute($value)
+    {
+        return date('d M Y h:i a', strtotime($value));
+    }
+
     public function tours()
     {
         return $this->hasMany(Tour::class);
