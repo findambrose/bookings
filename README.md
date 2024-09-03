@@ -12,4 +12,5 @@
 - Run php artisan serve --port 80
 - Run npm run dev
 - Run tests by running php artisan test
+- Access the api documentation by visiting http://localhost/docs/index.html
 - Visit http://localhost to access the app
