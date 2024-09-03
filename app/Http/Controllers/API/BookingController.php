@@ -7,21 +7,26 @@ use App\Models\Booking;
 use App\Models\Ticket;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class BookingController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     *  List all the bookings.
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
-        // Lets render this through Inertia instead
+        //Note:: We'll render these via Inertia.js
+        $bookings = Booking::with('tour', 'ticket', 'user')->orderByDesc('id')->paginate(10);
+
+        return response()->json(['bookings' => $bookings], 201);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new booking.
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
@@ -76,11 +81,21 @@ class BookingController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Show a booking.
+     * @param string $id
+     * @return \Illuminate\Http\JsonResponse
      */
+
     public function show(string $id)
     {
-        //
+        //Show the booking details
+        $booking = Booking::with('tour', 'ticket', 'user')->find($id);
+
+        if (!$booking) {
+            return response()->json(['message' => 'Booking not found'], 404);
+        }
+
+        return response()->json(['booking' => $booking], 201);
     }
 
     /**

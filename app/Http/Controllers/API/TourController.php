@@ -9,15 +9,20 @@ use Illuminate\Http\Request;
 class TourController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     *  List all the tours.
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
-        // Lets render this through Inertia instead
+        //Note:: We'll render these via Inertia.js
+        $tours = Tour::orderBy('id', 'desc')->paginate(10);
+        return response()->json(['tours' => $tours], 201);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new tour.
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
@@ -33,15 +38,26 @@ class TourController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Show a tour.
+     * @param string $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(string $id)
     {
-        //
+        $tour = Tour::find($id);
+
+        if(!$tour){
+            return response()->json(['message' => 'Tour not found'], 404);
+        }
+
+        return response()->json(['tour' => $tour], 201);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update a tour
+     * @param Request $request
+     * @param string $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, string $id)
     {
@@ -63,7 +79,9 @@ class TourController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Destroy a tour
+     * @param string $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy(string $id)
     {

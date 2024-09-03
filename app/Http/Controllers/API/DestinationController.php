@@ -9,15 +9,20 @@ use Illuminate\Http\Request;
 class DestinationController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     *  List all the destinations.
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
-        // Lets render this data through Inertia instead
+        //Note:: We'll render these via Inertia.js
+        $destinations = Destination::orderBy('id', 'desc')->paginate(10);
+        return response()->json(['destinations' => $destinations], 201);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new destination.
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
@@ -41,15 +46,24 @@ class DestinationController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Show a destination.
+     * @param string $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(string $id)
     {
-        //
+        $destination = Destination::find($id);
+        if (!$destination) {
+            return response()->json(['message' => 'Destination not found'], 404);
+        }
+        return response()->json(['destination' => $destination], 201);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update a destination
+     * @param Request $request
+     * @param string $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, string $id)
     {
@@ -77,7 +91,9 @@ class DestinationController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Destroy a destination
+     * @param string $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy(string $id)
     {

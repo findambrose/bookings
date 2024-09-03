@@ -12,7 +12,6 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //TODO: Scoope the user's bookings
         $bookings =  Booking::with('tour', 'ticket', 'user')->orderByDesc('id')->paginate(10);
 
         return Inertia::render('Bookings/Index', [

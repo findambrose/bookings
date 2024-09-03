@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        //Seed a destination with three tours
+        //Seed a destination with three tours and an admin user
         $this->call([
             DestinationsSeeder::class,
             UsersSeeder::class

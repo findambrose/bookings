@@ -77,7 +77,7 @@ export default {
                 return;
             }
 
-            axios.post(route('api.bookings.store'), this.booking_payload)
+            axios.post(route('bookings.store'), this.booking_payload)
                 .then(response => {
                     if(response.status === 201){
                         this.modal_loading = false;
@@ -119,14 +119,10 @@ export default {
             @on-ok="bookTour"
             @on-cancel="modal_status">
 
-            <div v-if="!$page.props.auth.user" class="grid grid-cols-1 md:grid-cols-12 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
                 <Input size="large" class="col-span-6" v-model="booking_payload.slots" type="number" placeholder="Please enter the number of slots you are booking." />
                 <Input size="large" class="col-span-6" v-model="booking_payload.user_name" type="text" placeholder="Please enter the ticket holder name." />
                 <Input size="large" class="col-span-12" v-model="booking_payload.email_address" type="email" placeholder="Please enter your email address." />
-            </div>
-
-            <div v-else class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                <Input class="col-span-6" v-model="this.booking_payload.slots" type="number" placeholder="Please enter the number of slots you are booking." />
             </div>
 
             <div class="border-2 green rounded-md p-4 mt-4">
@@ -189,7 +185,7 @@ export default {
 
                             <Link
                                 v-if="canRegister"
-                                :href="route('register')"
+                                href="https://bookings.test/docs/index.html"
                             >
                                 <Button v-if="canRegister" type="success" shape="circle">Sign Up</Button>
                             </Link>

@@ -5,7 +5,7 @@ use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\TourController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Api\BookingController as ApiBookingController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -21,6 +21,7 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/bookings', [BookingController::class, 'index'])->name('bookings.index');
+    Route::post('/bookings', [ApiBookingController::class, 'store'])->name('bookings.store');
     Route::get('/tickets', [TicketController::class, 'index'])->name('tickets.index');
     Route::get('/tours', [TourController::class, 'index'])->name('tours.index');
     Route::get('/destinations', [DestinationController::class, 'index'])->name('destinations.index');
