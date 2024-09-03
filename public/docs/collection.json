@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "https:\/\/bookings.test"
+            "value": "https:\/\/bookings.nguzotech.com\/"
         }
     ],
     "info": {
         "name": "Solutech Bookings",
-        "_postman_id": "fd99a7d2-0ac8-44c2-aaaf-256a47956bca",
+        "_postman_id": "eb0d83a6-4d42-4654-b03d-61208afb7be3",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -58,8 +58,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The route api\/tours could not be found.\"\n}",
                             "name": ""
                         }
                     ]
@@ -101,7 +101,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dolore",
+                                    "value": "tempora",
                                     "description": "The ID of the tour."
                                 }
                             ]
@@ -136,8 +136,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The route api\/tours\/tempora could not be found.\"\n}",
                             "name": ""
                         }
                     ]
@@ -154,7 +154,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "aspernatur",
                                     "description": "The ID of the tour."
                                 }
                             ]
@@ -187,7 +187,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "est",
                                     "description": "The ID of the tour."
                                 }
                             ]
@@ -247,8 +247,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The route api\/destinations could not be found.\"\n}",
                             "name": ""
                         }
                     ]
@@ -275,7 +275,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"necessitatibus\",\"description\":\"Nobis non ullam iure.\"}"
+                            "raw": "{\"name\":\"blanditiis\",\"description\":\"Animi quas autem ut reprehenderit.\"}"
                         },
                         "description": ""
                     },
@@ -293,7 +293,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dolores",
+                                    "value": "qui",
                                     "description": "The ID of the destination."
                                 }
                             ]
@@ -328,8 +328,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The route api\/destinations\/qui could not be found.\"\n}",
                             "name": ""
                         }
                     ]
@@ -346,7 +346,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "reiciendis",
+                                    "value": "suscipit",
                                     "description": "The ID of the destination."
                                 }
                             ]
@@ -364,7 +364,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"quaerat\",\"description\":\"Ut nihil fugit fugiat vero fugiat.\"}"
+                            "raw": "{\"name\":\"inventore\",\"description\":\"Mollitia nostrum exercitationem ut fugiat quia nemo.\"}"
                         },
                         "description": ""
                     },
@@ -382,7 +382,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "maiores",
+                                    "value": "quaerat",
                                     "description": "The ID of the destination."
                                 }
                             ]
@@ -442,8 +442,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The route api\/bookings could not be found.\"\n}",
                             "name": ""
                         }
                     ]
@@ -485,7 +485,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sed",
+                                    "value": "exercitationem",
                                     "description": "The ID of the booking."
                                 }
                             ]
@@ -520,8 +520,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The route api\/bookings\/exercitationem could not be found.\"\n}",
                             "name": ""
                         }
                     ]
@@ -565,8 +565,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The route api\/stats could not be found.\"\n}",
                             "name": ""
                         }
                     ]

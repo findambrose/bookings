@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "https://bookings.test";
+        var tryItOutBaseUrl = "https://bookings.nguzotech.com/";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -133,7 +133,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>https://bookings.test</code>
+    <strong>Base URL</strong>: <code>https://bookings.nguzotech.com/</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -162,7 +162,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://bookings.test/api/tours" \
+    --get "https://bookings.nguzotech.com/api/tours" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -170,7 +170,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/tours"
+    "https://bookings.nguzotech.com/api/tours"
 );
 
 const headers = {
@@ -188,7 +188,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-tours">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -200,7 +200,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;message&quot;: &quot;The route api/tours could not be found.&quot;
 }</code>
  </pre>
     </span>
@@ -300,7 +300,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://bookings.test/api/tours" \
+    "https://bookings.nguzotech.com/api/tours" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -308,7 +308,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/tours"
+    "https://bookings.nguzotech.com/api/tours"
 );
 
 const headers = {
@@ -422,7 +422,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://bookings.test/api/tours/dolore" \
+    --get "https://bookings.nguzotech.com/api/tours/tempora" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -430,7 +430,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/tours/dolore"
+    "https://bookings.nguzotech.com/api/tours/tempora"
 );
 
 const headers = {
@@ -448,7 +448,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-tours--id-">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -460,7 +460,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;message&quot;: &quot;The route api/tours/tempora could not be found.&quot;
 }</code>
  </pre>
     </span>
@@ -551,10 +551,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-tours--id-"
-               value="dolore"
+               value="tempora"
                data-component="url">
     <br>
-<p>The ID of the tour. Example: <code>dolore</code></p>
+<p>The ID of the tour. Example: <code>tempora</code></p>
             </div>
                     </form>
 
@@ -572,7 +572,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://bookings.test/api/tours/et" \
+    "https://bookings.nguzotech.com/api/tours/aspernatur" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -580,7 +580,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/tours/et"
+    "https://bookings.nguzotech.com/api/tours/aspernatur"
 );
 
 const headers = {
@@ -689,10 +689,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-tours--id-"
-               value="et"
+               value="aspernatur"
                data-component="url">
     <br>
-<p>The ID of the tour. Example: <code>et</code></p>
+<p>The ID of the tour. Example: <code>aspernatur</code></p>
             </div>
                     </form>
 
@@ -710,7 +710,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://bookings.test/api/tours/et" \
+    "https://bookings.nguzotech.com/api/tours/est" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -718,7 +718,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/tours/et"
+    "https://bookings.nguzotech.com/api/tours/est"
 );
 
 const headers = {
@@ -823,10 +823,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-tours--id-"
-               value="et"
+               value="est"
                data-component="url">
     <br>
-<p>The ID of the tour. Example: <code>et</code></p>
+<p>The ID of the tour. Example: <code>est</code></p>
             </div>
                     </form>
 
@@ -844,7 +844,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://bookings.test/api/destinations" \
+    --get "https://bookings.nguzotech.com/api/destinations" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -852,7 +852,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/destinations"
+    "https://bookings.nguzotech.com/api/destinations"
 );
 
 const headers = {
@@ -870,7 +870,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-destinations">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -882,7 +882,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;message&quot;: &quot;The route api/destinations could not be found.&quot;
 }</code>
  </pre>
     </span>
@@ -982,20 +982,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://bookings.test/api/destinations" \
+    "https://bookings.nguzotech.com/api/destinations" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"necessitatibus\",
-    \"description\": \"Nobis non ullam iure.\"
+    \"name\": \"blanditiis\",
+    \"description\": \"Animi quas autem ut reprehenderit.\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/destinations"
+    "https://bookings.nguzotech.com/api/destinations"
 );
 
 const headers = {
@@ -1005,8 +1005,8 @@ const headers = {
 };
 
 let body = {
-    "name": "necessitatibus",
-    "description": "Nobis non ullam iure."
+    "name": "blanditiis",
+    "description": "Animi quas autem ut reprehenderit."
 };
 
 fetch(url, {
@@ -1106,10 +1106,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-destinations"
-               value="necessitatibus"
+               value="blanditiis"
                data-component="body">
     <br>
-<p>Example: <code>necessitatibus</code></p>
+<p>Example: <code>blanditiis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1117,10 +1117,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-destinations"
-               value="Nobis non ullam iure."
+               value="Animi quas autem ut reprehenderit."
                data-component="body">
     <br>
-<p>Example: <code>Nobis non ullam iure.</code></p>
+<p>Example: <code>Animi quas autem ut reprehenderit.</code></p>
         </div>
         </form>
 
@@ -1138,7 +1138,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://bookings.test/api/destinations/dolores" \
+    --get "https://bookings.nguzotech.com/api/destinations/qui" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1146,7 +1146,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/destinations/dolores"
+    "https://bookings.nguzotech.com/api/destinations/qui"
 );
 
 const headers = {
@@ -1164,7 +1164,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-destinations--id-">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -1176,7 +1176,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;message&quot;: &quot;The route api/destinations/qui could not be found.&quot;
 }</code>
  </pre>
     </span>
@@ -1267,10 +1267,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-destinations--id-"
-               value="dolores"
+               value="qui"
                data-component="url">
     <br>
-<p>The ID of the destination. Example: <code>dolores</code></p>
+<p>The ID of the destination. Example: <code>qui</code></p>
             </div>
                     </form>
 
@@ -1288,20 +1288,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://bookings.test/api/destinations/reiciendis" \
+    "https://bookings.nguzotech.com/api/destinations/suscipit" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"quaerat\",
-    \"description\": \"Ut nihil fugit fugiat vero fugiat.\"
+    \"name\": \"inventore\",
+    \"description\": \"Mollitia nostrum exercitationem ut fugiat quia nemo.\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/destinations/reiciendis"
+    "https://bookings.nguzotech.com/api/destinations/suscipit"
 );
 
 const headers = {
@@ -1311,8 +1311,8 @@ const headers = {
 };
 
 let body = {
-    "name": "quaerat",
-    "description": "Ut nihil fugit fugiat vero fugiat."
+    "name": "inventore",
+    "description": "Mollitia nostrum exercitationem ut fugiat quia nemo."
 };
 
 fetch(url, {
@@ -1416,10 +1416,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-destinations--id-"
-               value="reiciendis"
+               value="suscipit"
                data-component="url">
     <br>
-<p>The ID of the destination. Example: <code>reiciendis</code></p>
+<p>The ID of the destination. Example: <code>suscipit</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -1428,10 +1428,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-destinations--id-"
-               value="quaerat"
+               value="inventore"
                data-component="body">
     <br>
-<p>Example: <code>quaerat</code></p>
+<p>Example: <code>inventore</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1439,10 +1439,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-destinations--id-"
-               value="Ut nihil fugit fugiat vero fugiat."
+               value="Mollitia nostrum exercitationem ut fugiat quia nemo."
                data-component="body">
     <br>
-<p>Example: <code>Ut nihil fugit fugiat vero fugiat.</code></p>
+<p>Example: <code>Mollitia nostrum exercitationem ut fugiat quia nemo.</code></p>
         </div>
         </form>
 
@@ -1460,7 +1460,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://bookings.test/api/destinations/maiores" \
+    "https://bookings.nguzotech.com/api/destinations/quaerat" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1468,7 +1468,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/destinations/maiores"
+    "https://bookings.nguzotech.com/api/destinations/quaerat"
 );
 
 const headers = {
@@ -1573,10 +1573,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-destinations--id-"
-               value="maiores"
+               value="quaerat"
                data-component="url">
     <br>
-<p>The ID of the destination. Example: <code>maiores</code></p>
+<p>The ID of the destination. Example: <code>quaerat</code></p>
             </div>
                     </form>
 
@@ -1594,7 +1594,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://bookings.test/api/bookings" \
+    --get "https://bookings.nguzotech.com/api/bookings" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1602,7 +1602,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/bookings"
+    "https://bookings.nguzotech.com/api/bookings"
 );
 
 const headers = {
@@ -1620,7 +1620,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-bookings">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -1632,7 +1632,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;message&quot;: &quot;The route api/bookings could not be found.&quot;
 }</code>
  </pre>
     </span>
@@ -1732,7 +1732,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://bookings.test/api/bookings" \
+    "https://bookings.nguzotech.com/api/bookings" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1740,7 +1740,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/bookings"
+    "https://bookings.nguzotech.com/api/bookings"
 );
 
 const headers = {
@@ -1854,7 +1854,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://bookings.test/api/bookings/sed" \
+    --get "https://bookings.nguzotech.com/api/bookings/exercitationem" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1862,7 +1862,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/bookings/sed"
+    "https://bookings.nguzotech.com/api/bookings/exercitationem"
 );
 
 const headers = {
@@ -1880,7 +1880,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-bookings--id-">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -1892,7 +1892,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;message&quot;: &quot;The route api/bookings/exercitationem could not be found.&quot;
 }</code>
  </pre>
     </span>
@@ -1983,10 +1983,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-bookings--id-"
-               value="sed"
+               value="exercitationem"
                data-component="url">
     <br>
-<p>The ID of the booking. Example: <code>sed</code></p>
+<p>The ID of the booking. Example: <code>exercitationem</code></p>
             </div>
                     </form>
 
@@ -2004,7 +2004,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://bookings.test/api/stats" \
+    --get "https://bookings.nguzotech.com/api/stats" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -2012,7 +2012,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://bookings.test/api/stats"
+    "https://bookings.nguzotech.com/api/stats"
 );
 
 const headers = {
@@ -2030,7 +2030,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-stats">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -2042,7 +2042,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;message&quot;: &quot;The route api/stats could not be found.&quot;
 }</code>
  </pre>
     </span>

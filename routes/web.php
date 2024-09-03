@@ -5,7 +5,7 @@ use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\TourController;
-use App\Http\Controllers\Api\BookingController as ApiBookingController;
+use App\Http\Controllers\API\BookingController as ApiBookingController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
