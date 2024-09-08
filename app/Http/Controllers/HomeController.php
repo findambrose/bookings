@@ -22,7 +22,7 @@ class HomeController extends Controller
     public function index()
     {
         return Inertia::render('Welcome', [
-            'tours' => Tour::with('destination')->get(),
+            'tours' => Tour::with('destination')->where('slots', '>', 0)->get(),
             'canLogin' => Route::has('login'),
             'canRegister' => false,
             'laravelVersion' => Application::VERSION,

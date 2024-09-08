@@ -112,7 +112,6 @@ export default {
 </script>
 
 <template>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <Head title="Welcome"/>
     <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
         <Modal
