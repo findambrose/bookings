@@ -21,7 +21,6 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/bookings', [BookingController::class, 'index'])->name('bookings.index');
-    Route::post('/bookings', [ApiBookingController::class, 'store'])->name('bookings.store');
     Route::get('/tickets', [TicketController::class, 'index'])->name('tickets.index');
     Route::get('/tours', [TourController::class, 'index'])->name('tours.index');
     Route::get('/destinations', [DestinationController::class, 'index'])->name('destinations.index');

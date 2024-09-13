@@ -17,4 +17,7 @@ it('allows an admin to create a tour', function () {
 
     $response->assertStatus(201);
     expect(Tour::where('name', 'New Tour')->exists())->toBeTrue();
+    expect(Tour::where('price', 1000)->exists())->toBeTrue();
+    expect(Tour::where('slots', 10)->exists())->toBeTrue();
+    expect(Tour::where('description', 'A new tour description')->exists())->toBeTrue();
 });
